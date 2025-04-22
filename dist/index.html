@@ -1,17 +1,23 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FitAI</title>
-  <script type="module" crossorigin src="/assets/index-RjlQ2oC3.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-DVQDUvgY.css">
-</head>
-<body>
-  <h1>Bienvenido a FitAI</h1>
-  <p>Tu asistente inteligente para un estilo de vida saludable.</p>
-  <button id="fitai-button">¡Salúdame!</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitAI - Entrena en Casa</title>
+    <link rel="stylesheet" crossorigin href="/assets/index-DN8DhKWF.css">
+  </head>
+  <body>
+    <h1>FitAI - Entrenamientos en Casa</h1>
+    <p>Selecciona una rutina para comenzar:</p>
 
-  <!-- Solo una vez, asegurándote de agregar el type="module" -->
-</body>
+    <div id="workouts" class="workout-list">
+      <button class="workout-btn" data-workout="Piernas">Piernas</button>
+      <button class="workout-btn" data-workout="Cardio">Cardio</button>
+      <button class="workout-btn" data-workout="Espalda">Espalda</button>
+    </div>
+
+    <div id="workout-details" class="details"></div>
+
+    <script src="./script.js"></script>
+  </body>
 </html>
