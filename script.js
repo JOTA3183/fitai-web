@@ -1,53 +1,44 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Muestra detalles del grupo muscular
-  const workoutButtons = document.querySelectorAll('.workout-btn');
-  const detailsDiv = document.getElementById('workout-details');
+// Se seleccionan todos los botones de entrenamiento
+const workoutButtons = document.querySelectorAll('.workout-btn');
+const workoutDetails = document.getElementById('workout-details');
 
-  workoutButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const tipo = button.getAttribute('data-workout');
-      mostrarDetalles(tipo);
-    });
-  });
-
-  function mostrarDetalles(tipo) {
-    let mensaje = '';
-
-    switch (tipo) {
-      case 'Piernas':
-        mensaje = 'Sentadillas, Zancadas, Puente de glúteos.';
-        break;
-      case 'Cardio':
-        mensaje = 'Jumping jacks, Burpees, Mountain climbers.';
-        break;
-      case 'Espalda':
-        mensaje = 'Superman, Remo con banda elástica, Estiramientos.';
-        break;
-      default:
-        mensaje = 'Selecciona una rutina para ver los detalles.';
-    }
-
-    detailsDiv.innerHTML = `<p><strong>${tipo}:</strong> ${mensaje}</p>`;
-  }
-
-  // Función para rutinas por nivel
-  window.iniciarRutina = (nivel) => {
-    let mensaje = '';
-
-    switch (nivel) {
-      case 'principiante':
-        mensaje = 'Rutina Principiante: 20 minutos de ejercicios básicos.';
-        break;
-      case 'intermedio':
-        mensaje = 'Rutina Intermedia: 30 minutos con intensidad moderada.';
-        break;
-      case 'avanzado':
-        mensaje = 'Rutina Avanzada: 45 minutos de entrenamiento exigente.';
-        break;
-      default:
-        mensaje = 'Selecciona un nivel válido.';
-    }
-
-    alert(mensaje);
+// Función para mostrar los detalles de un entrenamiento
+const showWorkoutDetails = (workoutType) => {
+  const workouts = {
+    Piernas: {
+      description: 'Una rutina completa para tonificar las piernas.',
+      exercises: ['Sentadillas', 'Lunges', 'Prensa de Piernas'],
+    },
+    Cardio: {
+      description: 'Rutina de Cardio para quemar grasa y mejorar resistencia.',
+      exercises: ['Correr en sitio', 'Jumping Jacks', 'Saltar la cuerda'],
+    },
+    Espalda: {
+      description: 'Rutina enfocada en fortalecer la espalda.',
+      exercises: ['Pull-ups', 'Remo', 'Superman'],
+    },
   };
+
+  // Se obtienen los detalles del entrenamiento según el tipo
+  const details = workouts[workoutType];
+
+  if (details) {
+    workoutDetails.innerHTML = `
+      <h2>${workoutType}</h2>
+      <p>${details.description}</p>
+      <ul>
+        ${details.exercises.map(ex => `<li>${ex}</li>`).join('')}
+      </ul>
+    `;
+  } else {
+    workoutDetails.innerHTML = '<p>Selecciona un entrenamiento.</p>';
+  }
+};
+
+// Se agrega el evento de clic a cada botón
+workoutButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const workoutType = button.dataset.workout;
+    showWorkoutDetails(workoutType);
+  });
 });
