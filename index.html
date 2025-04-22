@@ -18,6 +18,28 @@
 
     <div id="workout-details" class="details"></div>
 
-    <script src="./script.js"></script>
+    <!-- 👇 Aquí incluimos la sección de tarjetas dentro del <body> -->
+    <section id="entrenamientos">
+      <h2>Entrenamientos en Casa</h2>
+      <div class="tarjetas">
+        <div class="tarjeta">
+          <h3>Rutina Principiante</h3>
+          <p>Duración: 20 minutos</p>
+          <button onclick="iniciarRutina('principiante')">Iniciar</button>
+        </div>
+        <div class="tarjeta">
+          <h3>Rutina Intermedia</h3>
+          <p>Duración: 30 minutos</p>
+          <button onclick="iniciarRutina('intermedio')">Iniciar</button>
+        </div>
+        <div class="tarjeta">
+          <h3>Rutina Avanzada</h3>
+          <p>Duración: 45 minutos</p>
+          <button onclick="iniciarRutina('avanzado')">Iniciar</button>
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="./script.js"></script>
   </body>
 </html>

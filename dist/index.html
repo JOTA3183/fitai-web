@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FitAI - Entrena en Casa</title>
-    <link rel="stylesheet" crossorigin href="/assets/index-DN8DhKWF.css">
+    <script type="module" crossorigin src="/assets/index-qQjnK2pl.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Zh1DRDyE.css">
   </head>
   <body>
     <h1>FitAI - Entrenamientos en Casa</h1>
@@ -18,6 +19,27 @@
 
     <div id="workout-details" class="details"></div>
 
-    <script src="./script.js"></script>
+    <!-- 👇 Aquí incluimos la sección de tarjetas dentro del <body> -->
+    <section id="entrenamientos">
+      <h2>Entrenamientos en Casa</h2>
+      <div class="tarjetas">
+        <div class="tarjeta">
+          <h3>Rutina Principiante</h3>
+          <p>Duración: 20 minutos</p>
+          <button onclick="iniciarRutina('principiante')">Iniciar</button>
+        </div>
+        <div class="tarjeta">
+          <h3>Rutina Intermedia</h3>
+          <p>Duración: 30 minutos</p>
+          <button onclick="iniciarRutina('intermedio')">Iniciar</button>
+        </div>
+        <div class="tarjeta">
+          <h3>Rutina Avanzada</h3>
+          <p>Duración: 45 minutos</p>
+          <button onclick="iniciarRutina('avanzado')">Iniciar</button>
+        </div>
+      </div>
+    </section>
+
   </body>
 </html>

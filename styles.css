@@ -1,4 +1,4 @@
-/* Estilos básicos para FitAI */
+/* Estilos generales */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f3f4f6;
@@ -18,36 +18,72 @@ p {
   color: #374151;
 }
 
+/* Botones generales */
 button {
   background-color: #2563eb;
   color: white;
   border: none;
   padding: 12px 24px;
-  margin-top: 20px;
   font-size: 1rem;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin: 10px;
 }
 
 button:hover {
   background-color: #1d4ed8;
 }
 
+/* Sección de selección de grupos musculares */
 .workout-list {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
+  margin: 30px 0;
 }
 
+/* Detalles del entrenamiento */
 .details {
-  margin-top: 40px;
-  background: #fff;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #111827;
+}
+
+/* Sección de tarjetas */
+#entrenamientos {
+  padding: 40px 20px;
+  background-color: #e5e7eb;
+}
+
+#entrenamientos h2 {
+  margin-bottom: 30px;
+  color: #111827;
+}
+
+/* Tarjetas de entrenamiento */
+.tarjetas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.tarjeta {
+  background-color: #ffffff;
   padding: 20px;
   border-radius: 12px;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  transition: transform 0.2s ease;
+}
+
+.tarjeta:hover {
+  transform: scale(1.05);
+}
+
+.tarjeta h3 {
+  margin-top: 0;
+  color: #2563eb;
+}
+
+.tarjeta p {
+  color: #4b5563;
 }
